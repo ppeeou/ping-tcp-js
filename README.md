@@ -1,9 +1,13 @@
 
 
+# install
+```
+npm install ping-tcp-js
+```
 
 # ping
 ```
-const client = require('ping-js)
+const client = require('ping-tcp-js)
 const HOST = 'google.com';
 const PORT = 80;
 
