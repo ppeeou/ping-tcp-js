@@ -1,0 +1,28 @@
+{
+  "name": "ping--js",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">= 6.0"
+  },
+  "author": {
+    "name": "xodltus",
+    "email": "xodltus@naver.com",
+    "url": "https://github.com/ppeeou"
+  },
+  "license": "ISC",
+  "keywords": [
+    "ping"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:ppeeou/ping--js.git"
+  }
+}
