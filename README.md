@@ -15,6 +15,7 @@ client
 
 # pingBackOff
 time : Reconnect time
+
 count : Number of times
 ```
 client
