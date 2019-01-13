@@ -19,7 +19,9 @@
   },
   "license": "ISC",
   "keywords": [
-    "ping"
+    "ping",
+    "tcp",
+    "network"
   ],
   "repository": {
     "type": "git",
