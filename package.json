@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --recursive ./__test__/*.test.js"
   },
   "engines": {
     "node": ">= 6.0"
@@ -26,5 +26,11 @@
   "repository": {
     "type": "git",
     "url": "git@github.com:ppeeou/ping--js.git"
+  },
+  "dependencies": {
+    "maketype": "^1.0.0"
+  },
+  "devDependencies": {
+    "mocha": "^6.1.4"
   }
 }
