@@ -1,6 +1,6 @@
 {
   "name": "ping-tcp-js",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "",
   "main": "index.js",
   "directories": {
@@ -28,6 +28,8 @@
     "url": "git@github.com:ppeeou/ping--js.git"
   },
   "dependencies": {
+    "axios": "^0.19.0",
+    "is-url": "^1.2.4",
     "maketype": "^1.0.0"
   },
   "devDependencies": {
