@@ -1,6 +1,6 @@
 {
   "name": "ping-tcp-js",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "",
   "main": "index.js",
   "directories": {
@@ -33,6 +33,6 @@
     "maketype": "^1.0.0"
   },
   "devDependencies": {
-    "mocha": "^6.2.3"
+    "mocha": "^9.1.2"
   }
 }
