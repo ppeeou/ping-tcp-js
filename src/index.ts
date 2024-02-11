@@ -1,8 +1,8 @@
 // utils
-import net from "net";
+import * as net from "net";
 import axios from "axios";
-import isUrl from "is-url";
 import { isNumber, isString, isFunction, toPromise, isObject } from "maketype";
+import { isUrl } from "./is-url";
 
 const delay = (time: number) =>
   new Promise((resolve) => setTimeout(resolve, time));
@@ -24,10 +24,12 @@ function connect(host: string, port: number, callback: Function) {
 
   socket.on("error", done(false));
   socket.on("connect", done(true));
-  setTimeout(timeoutDone, destroyTime);
+
+  const id = setTimeout(timeoutDone, destroyTime);
 
   function done(isConnect: boolean) {
     return (error: any) => {
+      clearTimeout(id);
       if (isDisconnect) {
         return;
       }
