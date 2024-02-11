@@ -10,49 +10,49 @@ npm install ping-tcp-js
 
 - param
 
-```
-const client = require('ping-tcp-js');
+```ts
+const client = require("ping-tcp-js");
 // or
-import client from 'ping-tcp-js';
+import client from "ping-tcp-js";
 
-const host = 'google.com';
+const host = "google.com";
 const port = 80;
 
-client.ping(
-  {host, port},
-  {timeout: 5000} // optional
+await client.ping(
+  { host, port },
+  { timeout: 5000 } // optional
 );
 ```
 
 1. host
 
-```
-const client = require('ping-tcp-js');
+```ts
+const client = require("ping-tcp-js");
 // or
-import client from 'ping-tcp-js';
+import client from "ping-tcp-js";
 
-const host = 'google.com';
+const host = "google.com";
 const port = 80;
 
 client
-  .ping({host, port})
-  .then(() => console.log('connect ping'))
-  .catch((e) => console.error('not disconnet', e));
+  .ping({ host, port })
+  .then(() => console.log("connect ping"))
+  .catch((e) => console.error("not disconnet", e));
 ```
 
 2. url
 
-```
-const client = require('ping-tcp-js');
+```ts
+const client = require("ping-tcp-js");
 // or
-import client from 'ping-tcp-js';
+import client from "ping-tcp-js";
 
-const host = 'https://google.com';
+const host = "https://google.com";
 
 client
   .ping({ host })
-  .then(() => console.log('connect ping'))
-  .catch((e) => console.error('not disconnet', e));
+  .then(() => console.log("connect ping"))
+  .catch((e) => console.error("not disconnet", e));
 ```
 
 # pingBackOff
@@ -62,51 +62,42 @@ count : Number of times
 
 - param
 
-```
-const client = require('ping-tcp-js');
+```ts
+const client = require("ping-tcp-js");
 // or
-import client from 'ping-tcp-js';
+import client from "ping-tcp-js";
 
-const host = 'google.com';
+const host = "google.com";
 const port = 80;
 
 // or
-client.pingBackOff(
-  {host, port},
-  {time: 5000, count:10, timeout: 5000}
-);
+client.pingBackOff({ host, port }, { time: 5000, count: 10, timeout: 5000 });
 ```
 
 1. host
 
-```
-const host = 'google.com';
+```ts
+const host = "google.com";
 const port = 80;
 
 client
-  .pingBackOff(
-    {host, port},
-    {time: 5000, count:10, timeout: 5000}
-)
-  .then(() => console.log('connect pingBackOff'))
-  .catch((e) => console.error('not disconnet', e))
+  .pingBackOff({ host, port }, { time: 5000, count: 10, timeout: 5000 })
+  .then(() => console.log("connect pingBackOff"))
+  .catch((e) => console.error("not disconnet", e));
 ```
 
 2. url
 
-```
-const host = 'https://google.com';
+```ts
+const host = "https://google.com";
 client
-  .pingBackOff(
-    { host: host},
-    {time: 5000, count:10, timeout: 5000}
-  )
-  .then(() => console.log('connect pingBackOff'))
-  .catch((e) => console.error('not disconnet', e))
+  .pingBackOff({ host: host }, { time: 5000, count: 10, timeout: 5000 })
+  .then(() => console.log("connect pingBackOff"))
+  .catch((e) => console.error("not disconnet", e));
 ```
 
 ## Test
 
-```
+```ts
 npm run test
 ```
