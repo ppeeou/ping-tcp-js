@@ -1,13 +1,25 @@
 {
   "name": "ping-tcp-js",
-  "version": "1.5.0",
+  "version": "2.0.0-alpha-1",
   "description": "",
-  "main": "index.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/types/index.d.ts",
   "directories": {
-    "lib": "lib"
+    "src": "src"
   },
   "scripts": {
-    "test": "mocha --recursive ./__test__/*.test.js"
+    "build": "npm-run-all cleanup compile",
+    "cleanup": "rm -rf dist/cjs/types/ dist/esm/types/ dist/esm5/types/",
+    "compile:types": "tsc --project tsconfig.types.json ",
+    "compile:cjs": "tsc --project tsconfig.cjs.json",
+    "compile:esm5": "tsc --project tsconfig.esm5.json",
+    "compile:esm": "tsc --project tsconfig.esm.json",
+    "compile": "npm-run-all -p compile:cjs compile:esm compile:esm5 -s compile:types",
+    "compile:check": "tsc --project tsconfig.json",
+    "generate:extensions": "ts-node build/generateExtensions.ts",
+    "generate:exports": "ts-node build/generateExports.ts",
+    "test": "ts-mocha --recursive ./__test__/*.test.ts"
   },
   "engines": {
     "node": ">= 6.0"
@@ -25,14 +37,22 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:ppeeou/ping--js.git"
+    "url": "git@github.com:ppeeou/ping-js-tcp.git"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "is-url": "^1.2.4",
-    "maketype": "^1.0.0"
+    "@fxts/core": "^0.23.0",
+    "axios": "^1.6.7",
+    "maketype": "^2.0.0"
   },
   "devDependencies": {
-    "mocha": "^9.1.2"
+    "@types/is-url": "^1.2.32",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "^20.11.17",
+    "mocha": "^9.1.2",
+    "npm-run-all": "^4.1.5",
+    "ts-mocha": "^10.0.0",
+    "ts-node": "^10.9.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.3.3"
   }
 }
