@@ -1,6 +1,6 @@
 {
   "name": "ping-tcp-js",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -37,7 +37,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git@github.com:ppeeou/ping-js-tcp.git"
+    "url": "git@github.com:ppeeou/ping-tcp-js.git"
   },
   "dependencies": {
     "@fxts/core": "^0.23.0",
